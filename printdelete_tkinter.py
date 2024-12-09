@@ -57,8 +57,9 @@ def delete_printer():
         update_printer_list()  # Обновление списка после удаления
 
     # Выполняем команду PowerShell и получаем вывод
+    ps_command = 'PnPUtil.exe /restart-device /class "USB"'
     result = subprocess.run(["powershell", "-Command", ps_command], capture_output=True, text=True)
-
+    # result = subprocess.run(["powershell", "-Command"], capture_output=True, text=True)
     # Проверяем, что команда выполнена успешно
     if result.returncode == 0:
         print("Перезагрузка USB-устройств выполнена успешно.")
