@@ -85,7 +85,6 @@ var1 = tk.IntVar()
 
 def updconf():
     command = 'PnPUtil.exe /restart-device /class "USB"'
-    # Запуск команды
     os.system(command)
 
 # Настройка выделения и удаления принтера
